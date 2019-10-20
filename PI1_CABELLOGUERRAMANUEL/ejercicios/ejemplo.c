@@ -7,6 +7,7 @@
 
 #include "ejemplo.h"
 
+/*
 list leerFichero(const char* nombreFich) {
 	list res = list_empty(int_type);				// Crear una lista vacia
 	iterator it = file_iterable_pchar(nombreFich); 	// Ponerme al principio del fichero
@@ -21,7 +22,7 @@ void actualizaLista(list* ls, char* cad) {
 	iterator it = split_iterable_pchar(cad,", ");
 	while (iterable_has_next(&it)) {
 		char* trozo = (char*) iterable_next(&it);
-		int x = int_parse(trozo);					// Convertir cadena a entero
+		int x = int_parse_s(trozo);					// Convertir cadena a entero
 		list_add(ls,&x);							// Añadir entero a la lista
 	}
 }
@@ -35,3 +36,4 @@ int sumaEnteros(const list* ls) {
 	}
 	return res;
 }
+*/

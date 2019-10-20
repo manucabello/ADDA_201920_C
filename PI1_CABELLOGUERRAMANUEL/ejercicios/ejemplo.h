@@ -10,8 +10,10 @@
 
 #include "../types/list.h"		// No se incluye types.h ni iterator.h porque ya los incluye list.h
 
+/*
 list leerFichero(const char* nombreFich);
 void actualizaLista(list* ls, char* cad);
 int sumaEnteros(const list* ls);
+*/
 
 #endif /* EJEMPLO_H_ */
