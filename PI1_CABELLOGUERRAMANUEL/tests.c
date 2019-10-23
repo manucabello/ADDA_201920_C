@@ -7,10 +7,8 @@
 
 //#include "ejercicios/ejemplo.h"
 #include "ejercicios/ejercicio1.h"
-//#include "ejercicios/ejercicio2.h"
+#include "ejercicios/ejercicio2.h"
 
 int main(void) {
-	list numeros = leerFichero("ficheros/PI1Ej1DatosEntrada.txt");
-	list pares = seleccionaPares(&numeros);
-	printf(list_tostring(&pares,0));
+	ejercicio1((char*) "ficheros/PI1Ej1DatosEntrada.txt");
 }

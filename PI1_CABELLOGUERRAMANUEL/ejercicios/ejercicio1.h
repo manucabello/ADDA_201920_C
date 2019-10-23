@@ -10,9 +10,7 @@
 
 #include "../types/list.h"
 
-list leerFichero(const char* nombreFich);
-void actualizaLista(list* ls, char* cad);
-list seleccionaPares(list* ls);
-//list elevaListaCuadrado(list* ls);
+void ejercicio1(char* nombreFich);
+list pares_al_cuadrado(char* linea);
 
 #endif /* EJERCICIO1_H_ */
