@@ -8,6 +8,8 @@
 #ifndef EJERCICIO2_H_
 #define EJERCICIO2_H_
 
+#include "../types/multiset.h"
+
 void ejercicio2(char* nombreFich);
 
 #endif /* EJERCICIO2_H_ */
