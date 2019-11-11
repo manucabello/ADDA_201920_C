@@ -9,7 +9,7 @@
 
 void ejercicio2(char* nombreFich) {
 	iterator it = file_iterable_pchar(nombreFich);
-	hash_table res = hash_table_empty(int_type, string_type);
+	hash_table res = hash_table_empty(int_type, string_type);	// Usar list_type y definir la lista como lista de string
 	int* key = 0;
 	while (iterable_has_next(&it)) {
 		char* linea = (char*) iterable_next(&it);
