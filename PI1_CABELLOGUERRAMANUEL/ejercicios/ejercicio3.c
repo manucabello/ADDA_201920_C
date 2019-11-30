@@ -29,7 +29,7 @@ void ejercicio3(char* nombreFich) {
 	total = 0;
 	while (iterable_has_next(&it)) {
 		char* linea = (char*) iterable_next(&it);
-		bool res = ejercicio3_recur_no_final(linea,0,sizeof(linea));
+		bool res = ejercicio3_recur_no_final(linea,0,strlen(linea)-1);
 		printf("esPalindromoNoFinal(%s)=%s\n",linea, res ? "true" : "false");
 		if (res) {
 			cont++;
@@ -57,13 +57,14 @@ void ejercicio3(char* nombreFich) {
 bool ejercicio3_itera(char* cadena) {
 	bool res = true;
 	int i = 0;
-	int j = sizeof(cadena);
+	int j = strlen(cadena)-1;
 	while (i <= j) {
 		if (cadena[i] != cadena[j]) {
 			res = false;
 			break;
 		}
-		i++; j--;
+		i = i+1;
+		j = j-1;
 	}
 	return res;
 }
@@ -77,7 +78,7 @@ bool ejercicio3_recur_final(char* cadena, int i, int j, bool w) {
 }
 
 bool ejercicio3_recur_final_gen(char* cadena) {
-	return ejercicio3_recur_final(cadena,0,sizeof(cadena),true);
+	return ejercicio3_recur_final(cadena,0,strlen(cadena)-1,true);
 }
 
 bool ejercicio3_recur_no_final(char* cadena, int i, int j) {

@@ -11,5 +11,6 @@
 #include "../types/multiset.h"
 
 void ejercicio2(char* nombreFich);
+hash_table ejercicio2_itera(list lineas);
 
 #endif /* EJERCICIO2_H_ */
