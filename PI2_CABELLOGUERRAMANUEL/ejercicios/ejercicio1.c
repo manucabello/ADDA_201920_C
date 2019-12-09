@@ -8,6 +8,7 @@
 #include "ejercicio1.h"
 
 void ejercicio1(char* nombreFich) {
+/*
 	iterator it1 = file_iterable_pchar(nombreFich);
 	while (iterable_has_next(&it1)) {
 		char* linea = (char*) iterable_next(&it1);
@@ -24,18 +25,54 @@ void ejercicio1(char* nombreFich) {
 		}
 		printf("\n=================================================\n\n");
 	}
-/*
-	int matrix[4][4] = {{1,4,2,0},{3,3,7,7},{6,4,2,5},{3,9,1,4}};
-	int n = (int) sizeof(matrix)/sizeof(matrix[0]);
-	int* p[n];
-	for (int i = 0; i < n; i++) {
-		p[i] = matrix[i];
-	}
-	int** q = p;
-	imprimirMatriz(q,n);
-	bool res = checkMatrix(q,n);
-	printf("%s\n\n",res ? "Cumple la propiedad":"NO cumple la propiedad");
 */
+// ##### TEST 1 #####
+	int matrix1[2][3] = {{1,4},{10,20}};
+	int n1 = (int) sizeof(matrix1)/sizeof(matrix1[0]);
+	int* p1[n1];
+	for (int i = 0; i < n1; i++) {
+		p1[i] = matrix1[i];
+	}
+	int** q1 = p1;
+	imprimirMatriz(q1,n1);
+	bool res1 = checkMatrix(q1,n1);
+	printf("%s\n\n",res1 ? "Cumple la propiedad":"NO cumple la propiedad");
+
+// ##### TEST 2 #####
+	int matrix2[4][4] = {{1,4,2,0},{3,3,7,7},{6,4,2,5},{3,9,1,4}};
+	int n2 = (int) sizeof(matrix2)/sizeof(matrix2[0]);
+	int* p2[n2];
+	for (int i = 0; i < n2; i++) {
+		p2[i] = matrix2[i];
+	}
+	int** q2 = p2;
+	imprimirMatriz(q2,n2);
+	bool res2 = checkMatrix(q2,n2);
+	printf("%s\n\n",res2 ? "Cumple la propiedad":"NO cumple la propiedad");
+
+// ##### TEST 3 #####
+	int matrix3[4][4] = {{10,4,2,0},{3,3,7,7},{6,4,2,5},{3,9,1,4}};
+	int n3 = (int) sizeof(matrix3)/sizeof(matrix3[0]);
+	int* p3[n3];
+	for (int i = 0; i < n3; i++) {
+		p3[i] = matrix3[i];
+	}
+	int** q3 = p3;
+	imprimirMatriz(q3,n3);
+	bool res3 = checkMatrix(q3,n3);
+	printf("%s\n\n",res3 ? "Cumple la propiedad":"NO cumple la propiedad");
+
+// ##### TEST 4 #####
+	int matrix4[4][4] = {{1,4,2,0},{3,3,7,7},{6,4,5,5},{3,9,1,4}};
+	int n4 = (int) sizeof(matrix4)/sizeof(matrix4[0]);
+	int* p4[n4];
+	for (int i = 0; i < n4; i++) {
+		p4[i] = matrix4[i];
+	}
+	int** q4 = p4;
+	imprimirMatriz(q4,n4);
+	bool res4 = checkMatrix(q4,n4);
+	printf("%s\n\n",res4 ? "Cumple la propiedad":"NO cumple la propiedad");
 }
 
 bool checkMatrix(int** matrix, int n) {
@@ -126,10 +163,17 @@ int** submatrix(int** matrix, int n, int row, int col) {
 
 void imprimirMatriz(int** imp_matrix, int n) {
 	for (int i = 0; i < n; i++) {
+		printf("{");
 		for (int j = 0; j < n; j++) {
-			printf("%d ",imp_matrix[i][j]);
+			printf("%d",imp_matrix[i][j]);
+			if (j < n-1) {
+				printf(" ");
+			}
 		}
-		printf("\n");
+		printf("}");
+		if (i < n-1) {
+			printf(",");
+		}
 	}
 	printf("\n");
 }

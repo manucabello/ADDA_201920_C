@@ -10,7 +10,7 @@
 #include "ejercicios/ejercicio4.h"
 
 int main(void) {
-	ejercicio1((char*) "ficheros/PI2Ej1DatosEntrada.txt");
+//	ejercicio1((char*) "ficheros/PI2Ej1DatosEntrada.txt");
 //	ejercicio2((char*) "ficheros/PI2Ej2DatosEntrada.txt");
-//	ejercicio4((char*) "ficheros/PI2Ej4DatosEntrada.txt");
+	ejercicio4((char*) "ficheros/PI2Ej4DatosEntrada.txt");
 }
