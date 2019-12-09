@@ -12,7 +12,7 @@
 #include "../types/iterables.h"
 #include "../types/memory_heap.h"
 
-const int tam;
+#define TAM 100
 
 void ejercicio1(char* nombreFich);
 bool checkMatrix(int** matrix, int n);

@@ -8,24 +8,21 @@
 #include "ejercicio1.h"
 
 void ejercicio1(char* nombreFich) {
-	iterator it = file_iterable_pchar(nombreFich);
-	char* matrix[tam];
-	int n;
-	while (iterable_has_next(&it)) {
-		char* linea = (char*) iterable_next(&it);
-		printf("La matriz: {%s}\n",linea);
-		iterator it = split_iterable_pchar(linea,"{,}");
-		n = 0;
-		while (iterable_has_next(&it)) {
-			char* trozo = (char*) iterable_next(&it);
-//			printf("%s\n",trozo);
-			matrix[n] = trozo;
-			n++;
+	iterator it1 = file_iterable_pchar(nombreFich);
+	while (iterable_has_next(&it1)) {
+		char* linea = (char*) iterable_next(&it1);
+		iterator it2 = split_iterable_pchar(linea,"{,}");
+		while (iterable_has_next(&it2)) {
+			char* trozo = (char*) iterable_next(&it2);
+			iterator it3 = split_iterable_pchar(trozo," ");
+			while (iterable_has_next(&it3)) {
+				char* num = (char*) iterable_next(&it3);
+				int x = int_parse_s(num);
+				printf("%d,",x);
+			}
+			printf("\n");
 		}
-		printf("(%d)\n",n);
-		for (int i = 0; i < n; i++) {
-			printf("%s\n",matrix[i]);
-		}
+		printf("\n=================================================\n\n");
 	}
 /*
 	int matrix[4][4] = {{1,4,2,0},{3,3,7,7},{6,4,2,5},{3,9,1,4}};
